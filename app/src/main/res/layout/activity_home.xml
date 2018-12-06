@@ -16,6 +16,10 @@
             app:layout_constraintStart_toStartOf="parent"
             android:id="@+id/frameLayout_homeScreenFrame">
 
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/outdialog"/>
     </FrameLayout>
 
     <android.support.design.widget.NavigationView
