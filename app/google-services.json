@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "1037814707835",
+    "firebase_url": "https://worldmovie-cb7b9.firebaseio.com",
+    "project_id": "worldmovie-cb7b9",
+    "storage_bucket": "worldmovie-cb7b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037814707835:android:b3463e66f635df40",
+        "android_client_info": {
+          "package_name": "com.example.changjameslee.worldmovie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037814707835-uv2ckfvneluo9f3qujrk7vjbi442scgg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.changjameslee.worldmovie",
+            "certificate_hash": "6092717da4fce44ac8a873239b99a963048fb33f"
+          }
+        },
+        {
+          "client_id": "1037814707835-jum6ijdvqfb8k331740e2f84rk0k23g7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.changjameslee.worldmovie",
+            "certificate_hash": "49121cb4ec4d7874abd794be2d7b92da418ac9f2"
+          }
+        },
+        {
+          "client_id": "1037814707835-a89vkglt506h47rla0c2h1ag119qcdch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn3jpmhKrO1LRCVY0vrzutrC99npY5b44"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037814707835-a89vkglt506h47rla0c2h1ag119qcdch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

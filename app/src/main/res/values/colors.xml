@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#145c88</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="loginButton">#9c3647</color>
+    <color name="fragment_home">#188c8c</color>
+    <color name="fragment_profile">#e3e3e3</color>
+    <color name="fragment_branch">#24B1E0</color>
+
+    <color name="gradient1">#ffffff</color>
+    <color name="gradient2">#145c88</color>
+    <color name="gradient3">#00574B</color>
+    <color name="sidebarColor">#b6aeb0</color>
+</resources>
