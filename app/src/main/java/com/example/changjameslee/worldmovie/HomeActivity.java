@@ -47,11 +47,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
+
     private void selectItemDrawer(MenuItem itemId) {
 
         //creating fragment object
-        Fragment fragment = null;
         Class fragmentClass;
+        Fragment fragment = null;
+
         //initializing the fragment object which is selected
         switch (itemId.getItemId()) {
             case R.id.nav_home:
@@ -67,13 +69,16 @@ public class HomeActivity extends AppCompatActivity {
                 fragmentClass = BranchFragment.class;
                 break;
             case R.id.nav_logOut:
-                getSupportActionBar().setTitle("Branch");
-                mGoogleSignInClient.signOut();
-                mGoogleSignInClient.revokeAccess();
-                Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
-                startActivity(intent);
-                finish();
-                fragmentClass = LoginActivity.class;
+
+                  mGoogleSignInClient.signOut();
+                  mGoogleSignInClient.revokeAccess();
+                  Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
+                  startActivity(intent);
+                  finish();
+                  fragmentClass = LoginActivity.class;
+                Toast.makeText(getApplicationContext(), "Successfully Signed Out!",Toast.LENGTH_LONG).show();
+
+
                 break;
             default:
                 fragmentClass = HomeActivity.class;
