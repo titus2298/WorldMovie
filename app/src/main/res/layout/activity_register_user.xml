@@ -70,9 +70,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:backgroundTint="@color/loginButton"
-                android:hint="Name" android:textColor="@color/colorAccent"
+                android:hint="Full Name" android:textColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent" android:fontFamily="serif" android:textSize="22sp"
-                android:inputType="text" android:id="@+id/RegisterActivityEditText_SignUpName"/>
+                android:inputType="text" android:id="@+id/RegisterActivityEditText_SignUpFullName"/>
     </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputLayout
             android:layout_width="300dp"

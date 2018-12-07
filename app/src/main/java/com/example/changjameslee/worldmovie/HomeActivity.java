@@ -27,6 +27,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
 public class HomeActivity extends AppCompatActivity {
@@ -83,6 +85,7 @@ public class HomeActivity extends AppCompatActivity {
             default:
                 fragmentClass = HomeActivity.class;
         }
+
         try{
             fragment=(Fragment) fragmentClass.newInstance();
         }
@@ -133,37 +136,50 @@ public class HomeActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void profileInfo()
-    {
-        String personName="";
-        String personGivenName;
-        String personFamilyName;
-        String personEmail="";
+    public void profileInfo() {
+        String personName = "";
+        String userGivenName;
+        String userFamilyName;
+        String userEmail = "";
         String personId;
-        Uri personPhoto= null;
-
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-        if (acct != null) {
-            personName = acct.getDisplayName();
-            personGivenName = acct.getGivenName();
-            personFamilyName = acct.getFamilyName();
-            personEmail = acct.getEmail();
-            personId = acct.getId();
-            personPhoto = acct.getPhotoUrl();
-
-        }
-
-        NavigationView navigationView =  findViewById(R.id.navigationSideBar);
+        Uri personPhoto = null;
+        NavigationView navigationView = findViewById(R.id.navigationSideBar);
 
         View headerView = navigationView.getHeaderView(0);
-        ImageView drawerImage =  headerView.findViewById(R.id.profileInfo_Image);
-        TextView drawerUsername =  headerView.findViewById(R.id.profileInfo_Name);
-        TextView drawerAccount =headerView.findViewById(R.id.profileInfo_Email);
+        ImageView drawerImage = headerView.findViewById(R.id.profileInfo_Image);
+        TextView drawerUsername = headerView.findViewById(R.id.profileInfo_Name);
+        TextView drawerAccount = headerView.findViewById(R.id.profileInfo_Email);
 
-        Picasso.get().load(personPhoto.toString()).error(R.drawable.venom).into(drawerImage);
-        drawerUsername.setText(personName);
-        drawerAccount.setText(personEmail);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
 
+        if (user != null || acct != null) {
+
+            if (acct != null) {
+                personName = acct.getDisplayName();
+                userGivenName = acct.getGivenName();
+                userEmail = acct.getFamilyName();
+                userEmail = acct.getEmail();
+                personId = acct.getId();
+                personPhoto = acct.getPhotoUrl();
+                Picasso.get().load(personPhoto.toString()).error(R.mipmap.ic_launcher).into(drawerImage);
+
+            } else if (user != null) {
+                // Name, email address, and profile photo Url
+                personName = user.getDisplayName();
+                userEmail = user.getEmail();
+                personPhoto = user.getPhotoUrl();
+
+                // Check if user's email is verified
+                boolean emailVerified = user.isEmailVerified();
+
+
+                String uid = user.getUid();
+            }
+
+            drawerUsername.setText(personName);
+            drawerAccount.setText(userEmail);
+        }
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {

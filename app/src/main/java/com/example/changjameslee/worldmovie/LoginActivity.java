@@ -3,6 +3,7 @@ package com.example.changjameslee.worldmovie;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
     private static String TAG="ERROR";
     private final static int RC_SIGN_IN=2;
 
+    TextInputEditText EdtTxttlogin_username,EdtTxtlogin_password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         signInWithGoogle = findViewById(R.id.forGoogle);
-       signInWithGoogle.setOnClickListener(new View.OnClickListener() {@Override
+        signInWithGoogle.setOnClickListener(new View.OnClickListener() {@Override
            public void onClick(View v) {
                 signIn();
            }
@@ -86,6 +89,8 @@ public class LoginActivity extends AppCompatActivity {
     {
         login = findViewById(R.id.LoginButton);
         register = findViewById(R.id.textView_mainSignUp);
+        EdtTxttlogin_username = findViewById(R.id.userNameLogIn);
+        EdtTxtlogin_password = findViewById(R.id.passwordLogIn);
     }
 
     @Override
@@ -141,9 +146,36 @@ public class LoginActivity extends AppCompatActivity {
    private View.OnClickListener loginBttn = new View.OnClickListener() {
        @Override
        public void onClick(View v) {
-         
-           Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-           startActivity(intent);
+           boolean isEmpty=false;
+
+           if(EdtTxttlogin_username.getText().toString().isEmpty())
+           {
+               EdtTxttlogin_username.setError("Please Enter Username");
+               isEmpty=true;
+
+           }
+
+           if(EdtTxtlogin_password.getText().toString().isEmpty())
+           {
+               EdtTxtlogin_password.setError("Please Enter Password");
+               isEmpty=true;
+           }
+
+           if(isEmpty==false) {
+               mAuth.signInWithEmailAndPassword(EdtTxttlogin_username.getText().toString(), EdtTxtlogin_password.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                   @Override
+                   public void onComplete(@NonNull Task<AuthResult> task) {
+                       if (task.isSuccessful()) {
+                           Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                           startActivity(intent);
+                           Toast.makeText(getApplication(), "Success", Toast.LENGTH_SHORT).show();
+                       } else {
+                           Toast.makeText(getApplication(), "Check Credentials ", Toast.LENGTH_SHORT).show();
+                       }
+                   }
+               });
+           }
+
         }
    };
 
