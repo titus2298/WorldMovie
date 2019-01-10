@@ -18,17 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-                android:name=".RegisterUser"
-                android:label="Register"
-                android:parentActivityName=".LoginActivity">
+       <activity android:name=".RegisterUser">
         </activity>
         <activity
                 android:name=".HomeActivity"
                 android:label="@string/title_activity_home">
         </activity>
         <activity android:name=".LoginActivity">
+        </activity>
 
+        <activity android:name=".register">
         </activity>
         //from facebook
         <meta-data
@@ -51,7 +50,6 @@
                 <data android:scheme="@string/fb_login_protocol_scheme"/>
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "1037814707835-urdhg6auqqr768fdlv0mv7s36q8a52q4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.changjameslee.worldmovie",
+            "certificate_hash": "4e2b6f45f69a18d54270e0e1843f9b3a397377c9"
+          }
+        },
+        {
           "client_id": "1037814707835-a89vkglt506h47rla0c2h1ag119qcdch.apps.googleusercontent.com",
           "client_type": 3
         }

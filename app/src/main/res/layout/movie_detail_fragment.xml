@@ -4,7 +4,7 @@
                                              xmlns:tools="http://schemas.android.com/tools"
                                              android:layout_width="match_parent"
                                               android:layout_height="match_parent"
-                                             android:background="@drawable/first_main_background"
+                                             android:background="@drawable/searchbar"
                                              >
       <Button
             android:id="@+id/bbtn_trailer"

@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-            android:id="@+id/navigation_home"
+            android:id="@+id/nav_nowshowing"
             android:title="NOW SHOWING"/>
 
     <item
-            android:id="@+id/navigation_profile"
-                       android:title="COMING"/>
+            android:id="@+id/nav_comingSoon"
+                       android:title="COMING SOON"/>
 
     <item
-            android:id="@+id/navigation_branch"
+            android:id="@+id/nav_advance"
             android:title="ADVANCE TICKET"/>
 
 </menu>

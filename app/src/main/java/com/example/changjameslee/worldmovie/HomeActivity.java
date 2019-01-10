@@ -204,7 +204,7 @@ public class HomeActivity extends AppCompatActivity {
         //BOTTOMNAVIGATION
         BottomNavigationView bottomNav= findViewById(R.id.navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-
+        //Navigation
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout_homeScreenFrame, new HomeFragment()).commit();
         getSupportActionBar().setTitle("Home");
